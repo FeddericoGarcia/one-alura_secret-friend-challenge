@@ -1,9 +1,11 @@
 :root {
-    --color-primary: #4B69FD;
+    --color-primary: #d4a82d;
     --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
+    --color-tertiary: #7cb8f0;
+    --color-button: #d4a82d;
+    --color-button-hover: #be982d;
+    --color-button-2: #fe652b;
+    --color-button-hover-2: #d85728;
     --color-text: #444444;
     --color-white: #FFFFFF;
 }
@@ -82,26 +84,20 @@ body {
 .input-name {
     width: 100%;
     padding: 10px;
-    border: 2px solid #000;
+    border: 1px solid #0005;
     border-radius: 25px 0 0 25px;
     font-size: 16px;
+}
+
+.input-name:focus {
+    outline: 1px solid var(--color-tertiary);
 }
 
 .button-container {
-    width: 300px;
+    width: 600px;
+    display: flex;
+    gap: 10px;
     justify-content: center;
-}
-
-/* Estilos de entrada de texto */
-.input-title {
-    flex: 1;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 2px solid #333;
-    border-right: none;
-    border-radius: 25px 0 0 25px;
-    font-family: "Merriweather", serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilos de botón */
@@ -109,7 +105,7 @@ button {
     padding: 15px 30px;
     font-family: "Inter", sans-serif;
     font-size: 16px;
-    border: 2px solid #000;
+    border: 2px solid transparent;
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
@@ -117,12 +113,12 @@ button {
 
 .button-add {
     background-color: var(--color-tertiary);
-    color: var(--color-text);
+    color: #000;
     border-radius: 0 25px 25px 0;
 }
 
 .button-add:hover {
-    background-color: #a1a1a1;
+    background-color: #96c6f3;
 }
 
 /* Listas */
@@ -147,16 +143,38 @@ ul {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 10px 40px;
+    padding: 10px 30px;
     color: var(--color-white);
     background-color: var(--color-button);
     font-size: 16px;
 }
 
 .button-draw img {
-    margin-right: 40px;
+    margin-right: 30px;
 }
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* Botón de empezar de nuevo */
+.button-clear {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 30px;
+    color: var(--color-white);
+    background-color: var(--color-button-2);
+    font-size: 16px;
+}
+
+.button-clear img {
+    margin-right: 30px;
+}
+
+.button-clear:hover {
+    background-color: var(--color-button-hover-2);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+}
+
