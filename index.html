@@ -7,15 +7,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Amigo Secreto</title>
 </head>
 
 <body>
     <main class="main-content">
-        <header class="header-banner">
-            <h1 class="main-title">Amigo Secreto</h1>
-            <img src="assets/amigo-secreto.png" alt="Imagen representativa de amigo secreto">
-        </header>
+        <section class="section-left">
+            <div class="header-banner glitch-wrapper">
+                <h1 class="main-title glitch" data-glitch="amigo secreto">Amigo Secreto</h1>
+            </div>
+        </section>
         
         <section class="input-section">
             <h2 class="section-title">Ingresa los nombres de tus amigos</h2>
@@ -23,17 +27,30 @@
                 <input type="text" id="amigo" class="input-name" placeholder="Escribe un nombre">
                 <button class="button-add" onclick="agregarAmigo()">AÑADIR</button>
             </div>
-           
-            <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul>
-            <ul id="resultado" class="result-list" aria-live="polite"></ul>
-
+            <ul id="listaAmigos" aria-labelledby="listaAmigos" role="list"></ul>
+            <dialog id="dialog">
+                <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+                <h3>El amigo secreto es </h3>
+                <p id="result"></p>
+            </dialog>
+            <dialog id="dialogError">
+                <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+                <h3>⛔ ERROR </h3>
+                <p id="resultError"></p>
+            </dialog>
+            <dialog id="dialogReset">
+                <h3>Reiniciar Juego</h3>
+                <p id="¿Deseas borrar todo y empezar de nuevo?"></p>
+                <button id="buttonSi">Si</button>
+                <button id="buttonNo">No</button>
+            </dialog>
             <div class="button-container">
                 <button class="button-draw" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
-                    <img src="assets/play_circle_outline.png" alt="Ícono para sortear">
-                    Sortear amigo
+                    <i class="fa-solid fa-circle-play"></i>
+                    Realizar sorteo
                 </button>
-                <button class="button-clear" onclick="borrarDatos()" aria-label="Borrar datos cargados">
-                    <img src="assets/play_circle_outline.png" alt="Ícono para sortear">
+                <button class="button-reset" onclick="borrarDatos()" aria-label="Borrar datos cargados">
+                    <i class="fa-solid fa-arrows-rotate"></i>
                     Empezar de nuevo
                 </button>
             </div>
@@ -41,5 +58,6 @@
     </main>
 
     <script src="app.js" defer></script>
+    <script src="https://kit.fontawesome.com/2223cc897f.js" crossorigin="anonymous"></script>
 </body>
 </html>
