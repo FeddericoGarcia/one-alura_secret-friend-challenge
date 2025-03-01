@@ -1,10 +1,12 @@
 # Amigo Secreto
 
 ¡Bienvenidos/as al sorteo de Amigo Secreto! Este proyecto te permite realizar sorteos con tus amigos de manera fácil y rápida.
+El mismo fue diseñado para el desafío propuesto en el cursado del Gurpo8 de Programación en ONE (Oracle Next Education) & Alura.
 
 ¡Visita la app: [Amigo Secreto](https://feddericogarcia.github.io/ONE-Alura_secret-friend-challenge/) !
+¡O visitala en: [Amigo Secreto](https://amigossecreto.vercel.app) !
 
-![ Interfaz de Amigo Secreto, diseño responsive](URL_de_la_imagen)
+<img src="https://raw.githubusercontent.com/FeddericoGarcia/ONE-Alura_secret-friend-challenge/refs/heads/main/assets/amigosecreto-web-responsive.png" alt="Interfaz de app Amigo Secreto, diseño responsive" style="width: 450px; height: 450px;">
 
 
 ## Descripción
