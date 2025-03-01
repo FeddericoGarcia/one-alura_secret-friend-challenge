@@ -3,7 +3,7 @@
 ¡Bienvenidos/as al sorteo de Amigo Secreto! Este proyecto te permite realizar sorteos con tus amigos de manera fácil y rápida.
 
 ¡Visita la app: [Amigo Secreto](https://feddericogarcia.github.io/ONE-Alura_secret-friend-challenge/) !
-¡O visitala en: [Amigo Secreto]((https://amigossecreto.vercel.app) !
+¡O visitala en: [Amigo Secreto](https://amigossecreto.vercel.app) !
 
 <img src="https://raw.githubusercontent.com/FeddericoGarcia/ONE-Alura_secret-friend-challenge/refs/heads/main/assets/amigosecreto-web-responsive.png" alt="Interfaz de app Amigo Secreto, diseño responsive" style="width: 450px; height: 450px;">
 
