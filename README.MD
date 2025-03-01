@@ -4,7 +4,7 @@
 
 ¡Visita la app: [Amigo Secreto](https://feddericogarcia.github.io/ONE-Alura_secret-friend-challenge/) !
 
-![ Interfaz de Amigo Secreto, diseño responsive](URL_de_la_imagen)
+![Interfaz de app Amigo Secreto, diseño responsive](https://raw.githubusercontent.com/FeddericoGarcia/ONE-Alura_secret-friend-challenge/refs/heads/main/assets/amigosecreto-web-responsive.png)
 
 
 ## Descripción
