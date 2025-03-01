@@ -101,10 +101,12 @@ let borrarDatos = () => {
 
 let resetData = () => {
     listaAmigos = [];
-    document.getElementById('listaAmigos').innerHTML = '';
-    document.getElementById('listaAmigosEnlazados').innerHTML = '';
     document.getElementById('amigo').value = '';
     document.getElementById('dialogReset').close();
+    document.getElementById('listaAmigos').innerHTML = '';
+    document.getElementById('listaAmigosEnlazados').innerHTML = '';
+    document.getElementById('resultadoEnlazados').innerHTML = '';
+    
 }
 
 document.addEventListener('DOMContentLoaded', () => {
