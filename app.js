@@ -5,6 +5,8 @@ let dialog = document.getElementById('dialog')
 let dialogError = document.getElementById('dialogError')
 let dialogReset = document.getElementById('dialogReset');
 let mostrarLista = document.getElementById('listaAmigos');
+let resultadoEnlazados = document.getElementById('resultadoEnlazados');
+let listaAmigosEnlazados = document.getElementById('listaAmigosEnlazados');
 
 let agregarAmigo = () =>{
     let nombre = document.getElementById('amigo').value;
@@ -24,7 +26,7 @@ let validarInput = ( nombre ) =>{
         return false;
     }
 
-    if( listaAmigos.includes(nombre)){
+    if( listaAmigos.includes(nombre) ){
         dialogError.showModal();
         resultError.innerHTML = `El nombre ${nombre} ya esta cargado en la lista`;
         return false;
@@ -33,20 +35,64 @@ let validarInput = ( nombre ) =>{
     return true;
 }
 
+let validarLista = () => {
+    if( listaAmigos.length === 0 ){
+        resultError.innerHTML = `La lista está vacía.`;
+        dialogError.showModal();
+        return false;
+    }
+    return true;
+}
+
 let visualizarArray = ( listaAmigos ) =>{
     mostrarLista.innerHTML = listaAmigos.map( nombre => `<li>${nombre}</li>`).join('\n');
 }
 
 let sortearAmigo = () =>{
-    if( listaAmigos.length === 0 ){
-        resultError.innerHTML = `La lista está vacía.`;
-        dialogError.showModal();
-        return;
+    if( validarLista() ){
+        let amigoSorteado = Math.floor(Math.random() * listaAmigos.length);
+        mostrarResult.innerHTML = `${listaAmigos[amigoSorteado]}`;
+        dialog.showModal();
     }
-    
-    let amigoSorteado = Math.floor(Math.random() * listaAmigos.length);
-    mostrarResult.innerHTML = `${listaAmigos[amigoSorteado]}`;
-    dialog.showModal();
+}
+
+let enlazarAmigo = () =>{
+    if (validarLista()) {
+        let arrayList = []; 
+        let listaAmigosUsados = new Set(); 
+        
+        while (listaAmigosUsados.size < listaAmigos.length) {
+            let amigoSorteado;
+            let amigoSorteado2;
+
+            do {
+                amigoSorteado = Math.floor(Math.random() * listaAmigos.length);
+            } while (listaAmigosUsados.has(amigoSorteado));
+
+            
+            listaAmigosUsados.add(amigoSorteado);
+
+            if (listaAmigosUsados.size === listaAmigos.length) {
+                arrayList.push(`${listaAmigos[amigoSorteado]}`);
+                break
+            }
+
+            do {
+                amigoSorteado2 = Math.floor(Math.random() * listaAmigos.length);
+            } while (listaAmigosUsados.has(amigoSorteado2) || amigoSorteado === amigoSorteado2);
+
+            listaAmigosUsados.add(amigoSorteado2);
+
+            arrayList.push(listaAmigos[amigoSorteado], listaAmigos[amigoSorteado2]);
+        }
+        resultadoEnlazados.innerHTML = `Resultado de los enlaces:`
+        listaAmigosEnlazados.innerHTML = arrayList.map((amigo, index) => {
+            if (index % 2 === 0) {
+                return `<div class="grid-item">${amigo} → ${arrayList[index + 1] ? arrayList[index + 1] : "SOLITO/A"}</div>`;
+            }
+            return '';
+        }).join('');
+    }
 }
 
 let borrarDatos = () => {
@@ -56,6 +102,7 @@ let borrarDatos = () => {
 let resetData = () => {
     listaAmigos = [];
     document.getElementById('listaAmigos').innerHTML = '';
+    document.getElementById('listaAmigosEnlazados').innerHTML = '';
     document.getElementById('amigo').value = '';
     document.getElementById('dialogReset').close();
 }

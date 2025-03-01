@@ -6,28 +6,37 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900" rel="stylesheet">
     <title>Amigo Secreto</title>
+    <link rel="icon" href="assets/signopregunta.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/signopregunta.ico" type="image/x-icon">
+    <meta name="Federico Garcia" content="Federico Garcia Bengolea">
 </head>
-
 <body>
     <main class="main-content">
+
+        <div class="main-bg"></div>
+
         <section class="section-left">
-            <div class="header-banner glitch-wrapper">
-                <h1 class="main-title glitch" data-glitch="amigo secreto">Amigo Secreto</h1>
+            <div class="header-banner">
+                <h1 class="main-title">Amigo Secreto</h1>
+                <h2>¡Bienvenidos/as!</h2>
+                <p>Aquí podrás realizar sorteos con tus amigos, primero escribí la lista de los nombres de todos ellos, luego 
+                    elegí entre la función de sorteo aleatorio o enlazar amigos con otros. <br> Mucha suerte!! 🤞
+                </p>
+                <div></div>
             </div>
         </section>
         
         <section class="input-section">
-            <h2 class="section-title">Ingresa los nombres de tus amigos</h2>
+            <h2 class="section-title">Ingresá los nombres de tus amigos</h2>
             <div class="input-wrapper">
                 <input type="text" id="amigo" class="input-name" placeholder="Escribe un nombre">
                 <button class="button-add" onclick="agregarAmigo()">AÑADIR</button>
             </div>
             <ul id="listaAmigos" aria-labelledby="listaAmigos" role="list"></ul>
+            <h4 id="resultadoEnlazados"></h4>
+            <ul id="listaAmigosEnlazados" aria-labelledby="listaAmigos" role="list"></ul>
             <dialog id="dialog">
                 <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
                 <h3>El amigo secreto es </h3>
@@ -40,7 +49,7 @@
             </dialog>
             <dialog id="dialogReset">
                 <h3>Reiniciar Juego</h3>
-                <p id="¿Deseas borrar todo y empezar de nuevo?"></p>
+                <p>¿ Quieres borrar todo y empezar de nuevo ?</p>
                 <button id="buttonSi">Si</button>
                 <button id="buttonNo">No</button>
             </dialog>
@@ -49,12 +58,17 @@
                     <i class="fa-solid fa-circle-play"></i>
                     Realizar sorteo
                 </button>
+                <button class="button-draw" onclick="enlazarAmigo()" aria-label="Sortear amigo secreto">
+                    <i class="fa-solid fa-link"></i>
+                    Enlazar amigos
+                </button>
                 <button class="button-reset" onclick="borrarDatos()" aria-label="Borrar datos cargados">
                     <i class="fa-solid fa-arrows-rotate"></i>
-                    Empezar de nuevo
+                    Reiniciar juego
                 </button>
             </div>
         </section>
+
     </main>
 
     <script src="app.js" defer></script>
